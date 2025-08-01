@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -73,11 +77,10 @@
 
 @layer base {
   * {
-    border-color: rgb(214 211 209);
+    @apply border-border;
   }
   body {
-    background-color: rgb(255 255 255);
-    color: rgb(24 24 27);
+    @apply bg-background text-foreground;
   }
 }
 
