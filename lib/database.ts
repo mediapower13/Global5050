@@ -1,5 +1,6 @@
 // Simple database simulation for contact and newsletter submissions
 // In production, replace with actual database implementation
+// NOTE: This in-memory storage will reset on each serverless function invocation
 
 // Database types
 interface ContactSubmission {
@@ -22,7 +23,8 @@ interface NewsletterSubscription {
   createdAt: Date
 }
 
-// In-memory storage (replace with actual database in production)
+// In-memory storage (resets on each deployment/function call)
+// For production, consider using Vercel KV, Supabase, or another database
 const contactSubmissions: ContactSubmission[] = []
 const newsletterSubscriptions: NewsletterSubscription[] = []
 

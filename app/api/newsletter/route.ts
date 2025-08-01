@@ -27,19 +27,21 @@ export async function POST(request: NextRequest) {
 
     // Optional: Send welcome email via Formspree
     try {
-      await fetch(`https://formspree.io/f/${process.env.FORMSPREE_FORM_ID}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          email,
-          _subject: `Newsletter Subscription - Global 50:50 Concepts`,
-          message: `New newsletter subscription from: ${email}`,
-          _template: "table",
-        }),
-      })
+      if (process.env.FORMSPREE_NEWSLETTER_ID) {
+        await fetch(`https://formspree.io/f/${process.env.FORMSPREE_NEWSLETTER_ID}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            email,
+            _subject: `Newsletter Subscription - Global 50:50 Concepts`,
+            message: `New newsletter subscription from: ${email}`,
+            _template: "table",
+          }),
+        })
+      }
     } catch (emailError) {
       console.error("Newsletter email notification failed:", emailError)
       // Don't fail the subscription if email fails

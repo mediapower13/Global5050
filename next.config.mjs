@@ -6,13 +6,20 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  swcMinify: false,
-  experimental: {
-    forceSwcTransforms: false,
-  },
   images: {
-    domains: ['placeholder.svg', 'hebbkx1anhila5yf.public.blob.vercel-storage.com'],
-    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'hebbkx1anhila5yf.public.blob.vercel-storage.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+    unoptimized: false, // Enable optimization for better performance
+  },
+  // Optimize for Vercel deployment
+  experimental: {
+    optimizeCss: true,
   },
   // Environment variables
   env: {
