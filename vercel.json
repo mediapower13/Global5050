@@ -1,15 +1,10 @@
 {
+  "buildCommand": "pnpm build",
   "functions": {
     "app/api/**/*.ts": {
       "maxDuration": 10
     }
   },
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/"
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -25,6 +20,10 @@
         {
           "key": "X-XSS-Protection",
           "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "origin-when-cross-origin"
         }
       ]
     }

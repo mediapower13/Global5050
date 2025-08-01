@@ -17,10 +17,6 @@ const nextConfig = {
     ],
     unoptimized: false, // Enable optimization for better performance
   },
-  // Optimize for Vercel deployment
-  experimental: {
-    optimizeCss: true,
-  },
   // Environment variables
   env: {
     CUSTOM_KEY: process.env.CUSTOM_KEY,
