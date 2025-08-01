@@ -61,7 +61,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-20">
         <div className="absolute inset-0">
           <Image
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dangote%20global.jpg-GD4UJjdfdU4eRVS2c8VEqOgNNp4xdI.jpeg"
@@ -77,42 +77,42 @@ export default function HomePage() {
           <div
             className={`max-w-4xl transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
-            <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-4 md:mb-6">
               Building Nigeria&apos;s
               <span className="block text-blue-300">Future Together</span>
             </h1>
 
-            <p className="text-xl lg:text-2xl text-gray-200 max-w-3xl mb-8 leading-relaxed">
+            <p className="text-lg sm:text-xl lg:text-2xl text-gray-200 max-w-3xl mb-6 md:mb-8 leading-relaxed">
               To be the partner of choice for those who are building Nigeria, creating sustainable value for our
               stakeholders
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-6 md:mb-8">
+              <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-6 md:px-8 py-3 md:py-4 text-base md:text-lg">
                 <Link href="/products">
                   Our Products
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
                 </Link>
               </Button>
               <Button
                 asChild
                 variant="outline"
                 size="lg"
-                className="border-white text-white hover:bg-white hover:text-blue-900 bg-transparent px-8 py-4 text-lg"
+                className="border-white text-white hover:bg-white hover:text-blue-900 bg-transparent px-6 md:px-8 py-3 md:py-4 text-base md:text-lg"
               >
                 <Link href="/about">Learn More</Link>
               </Button>
             </div>
 
             {/* Contact Info */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 max-w-md">
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 md:p-6 max-w-sm md:max-w-md">
               <div className="flex items-center gap-3 mb-2">
-                <Phone className="h-5 w-5 text-blue-300" />
-                <span className="font-bold text-xl">0906 736 1349</span>
+                <Phone className="h-4 w-4 md:h-5 md:w-5 text-blue-300" />
+                <span className="font-bold text-lg md:text-xl">0906 736 1349</span>
               </div>
               <div className="flex items-center gap-3">
-                <MapPin className="h-5 w-5 text-blue-300" />
-                <span className="text-sm">97 Port Harcourt Road, Owerri</span>
+                <MapPin className="h-4 w-4 md:h-5 md:w-5 text-blue-300" />
+                <span className="text-xs md:text-sm">97 Port Harcourt Road, Owerri</span>
               </div>
             </div>
           </div>
@@ -120,13 +120,13 @@ export default function HomePage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-white">
+      <section className="py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl lg:text-5xl font-bold text-blue-600 mb-2">{stat.number}</div>
-                <div className="text-gray-600 font-medium">{stat.label}</div>
+                <div className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-blue-600 mb-1 md:mb-2">{stat.number}</div>
+                <div className="text-sm md:text-base text-gray-600 font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -134,11 +134,11 @@ export default function HomePage() {
       </section>
 
       {/* Product Showcase Carousel */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16 md:py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Premium Cement Brands</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-4 md:mb-6">Premium Cement Brands</h2>
+            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
               Official distributor for Nigeria&apos;s most trusted cement manufacturers
             </p>
           </div>

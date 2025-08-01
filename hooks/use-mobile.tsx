@@ -17,3 +17,6 @@ export function useIsMobile() {
 
   return !!isMobile
 }
+
+// Export the breakpoint for consistency
+export { MOBILE_BREAKPOINT }
