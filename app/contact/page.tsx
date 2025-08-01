@@ -52,7 +52,8 @@ export default function ContactPage() {
       } else {
         setSubmitStatus("error")
       }
-    } catch (error) {
+    } catch (err) {
+      console.error("Contact form submission error:", err)
       setSubmitStatus("error")
     } finally {
       setIsSubmitting(false)
@@ -98,9 +99,9 @@ export default function ContactPage() {
       <section className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <h1 className="text-4xl lg:text-5xl font-bold mb-4">Let's Talk Business</h1>
+            <h1 className="text-4xl lg:text-5xl font-bold mb-4">Let&apos;s Talk Business</h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Need a quote? Have questions about our products? Want to discuss a big project? We're here and ready to
+              Need a quote? Have questions about our products? Want to discuss a big project? We&apos;re here and ready to
               help. Real people, real answers across Nigeria.
             </p>
           </div>
@@ -116,7 +117,7 @@ export default function ContactPage() {
               <CardHeader>
                 <CardTitle className="text-2xl">Tell Us What You Need</CardTitle>
                 <CardDescription>
-                  Fill this out and we'll get back to you within 24 hours. Usually much faster during business hours.
+                  Fill this out and we&apos;ll get back to you within 24 hours. Usually much faster during business hours.
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -196,7 +197,7 @@ export default function ContactPage() {
                     <Alert className="border-green-200 bg-green-50">
                       <CheckCircle className="h-4 w-4 text-green-600" />
                       <AlertDescription className="text-green-800">
-                        Thank you for your message! We'll get back to you within 24 hours.
+                        Thank you for your message! We&apos;ll get back to you within 24 hours.
                       </AlertDescription>
                     </Alert>
                   )}
@@ -232,8 +233,8 @@ export default function ContactPage() {
               <div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">How to Reach Us</h2>
                 <p className="text-gray-600 mb-8">
-                  We've got offices across Nigeria - Lagos, Owerri, Abuja, Port Harcourt, plus warehouses in Kwara.
-                  Whatever works best for you - phone, email, or just drop by. We're in business to do business.
+                  We&apos;ve got offices across Nigeria - Lagos, Owerri, Abuja, Port Harcourt, plus warehouses in Kwara.
+                  Whatever works best for you - phone, email, or just drop by. We&apos;re in business to do business.
                 </p>
               </div>
 
@@ -288,7 +289,7 @@ export default function ContactPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Come See Us</h2>
             <p className="text-xl text-gray-600">
-              Sometimes it's easier to talk face-to-face. Here's where you can find us across Nigeria.
+              Sometimes it&apos;s easier to talk face-to-face. Here&apos;s where you can find us across Nigeria.
             </p>
           </div>
 
@@ -305,7 +306,7 @@ export default function ContactPage() {
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.1234567890123!2d7.0302!3d5.4840!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMjknMDIuNCJOIDfCsDAxJzQ4LjciRQ!5e0!3m2!1sen!2sng!4v1234567890123!5m2!1sen!2sng"
                     width="100%"
                     height="100%"
-                    style={{ border: 0 }}
+                    className="border-0"
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
@@ -327,7 +328,7 @@ export default function ContactPage() {
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.1234567890123!2d3.5021!3d6.6134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMzYnNDguMiJOIDPCsDMwJzA3LjYiRQ!5e0!3m2!1sen!2sng!4v1234567890123!5m2!1sen!2sng"
                     width="100%"
                     height="100%"
-                    style={{ border: 0 }}
+                    className="border-0"
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"

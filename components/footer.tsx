@@ -1,70 +1,126 @@
-import { Button } from "@/components/ui/button"
-import { MapPin, Phone, Mail, Linkedin, Facebook, Twitter } from "lucide-react"
+"use client"
+
+import { useState } from "react"
 import Link from "next/link"
-import NewsletterSignup from "./newsletter-signup"
 import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react"
+import { toast } from "@/hooks/use-toast"
 
 export default function Footer() {
+  const [email, setEmail] = useState("")
+  const [isSubscribing, setIsSubscribing] = useState(false)
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubscribing(true)
+
+    try {
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      })
+
+      const data = await response.json()
+
+      if (data.success) {
+        toast({
+          title: "Successfully subscribed!",
+          description: "Thank you for subscribing to our newsletter.",
+        })
+        setEmail("")
+      } else {
+        toast({
+          title: "Subscription failed",
+          description: data.error || "Please try again later.",
+          variant: "destructive",
+        })
+      }
+    } catch (err) {
+      console.error("Newsletter subscription error:", err)
+      toast({
+        title: "Subscription failed",
+        description: "Please try again later.",
+        variant: "destructive",
+      })
+    } finally {
+      setIsSubscribing(false)
+    }
+  }
+
   const quickLinks = [
     { name: "About Us", href: "/about" },
-    { name: "Services", href: "/services" },
+    { name: "Our Products", href: "/products" },
     { name: "Projects", href: "/projects" },
-    { name: "Testimonials", href: "/testimonials" },
     { name: "Locations", href: "/locations" },
     { name: "Contact", href: "/contact" },
   ]
 
-  const services = [
-    { name: "Cement Distribution", href: "/services#cement-distribution" },
-    { name: "Architectural Design", href: "/services#architectural-design" },
-    { name: "Building Construction", href: "/services#building-construction" },
-    { name: "Sand & Chippings", href: "/services#sand-chippings" },
-    { name: "Plastic Products", href: "/services#plastic-products" },
+  const productLinks = [
+    { name: "Cement Products", href: "/products/cement" },
+    { name: "Plastic Products", href: "/products/plastic" },
+    { name: "Sand & Aggregates", href: "/products/sand" },
+    { name: "Construction Services", href: "/products/services" },
+  ]
+
+  const locations = [
+    {
+      name: "Head Office - Owerri",
+      address: "97 Port Harcourt Road, beside GTBank",
+      phone: "0906 736 1349",
+    },
+    {
+      name: "Lagos Office",
+      address: "Lagos State",
+      phone: "08036007621",
+    },
+    {
+      name: "Kwara Warehouse",
+      address: "Olunlade, Ilorin",
+      phone: "08054186884",
+    },
   ]
 
   return (
     <footer className="bg-gray-900 text-white">
-      {/* Newsletter Section */}
-      <div className="border-b border-gray-800">
-        <div className="container mx-auto px-4 py-12">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="text-2xl font-bold mb-2">Stay Connected</h3>
-              <p className="text-gray-300">
-                Get updates on new products, special offers, and industry insights. Join our community of satisfied
-                customers across Nigeria.
-              </p>
-            </div>
-            <NewsletterSignup />
-          </div>
-        </div>
-      </div>
-
-      {/* Main Footer Content */}
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
-          <div className="lg:col-span-1">
-            <div className="flex items-center space-x-3 mb-4">
+          <div className="space-y-4">
+            <div className="flex items-center space-x-3">
               <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/global%205050%20logo.jpg-w2LQYJMprZOyTNCqiRZrSHwKH0KmyA.jpeg"
                 alt="Global 50:50 Concepts Logo"
-                width={50}
-                height={50}
+                width={40}
+                height={40}
                 className="rounded"
               />
-              <div className="flex flex-col">
-                <span className="text-xl font-bold">Global 50:50</span>
-                <span className="text-sm text-gray-400 -mt-1">Concepts Nig. Ltd.</span>
+              <div>
+                <h3 className="text-lg font-bold">Global 50:50</h3>
+                <p className="text-sm text-gray-400">Concepts Nig. Ltd.</p>
               </div>
             </div>
-            <p className="text-gray-300 mb-4 text-sm">
-              Nigeria's trusted construction solutions provider since 2012. Premium cement, architectural design, and
-              complete building services.
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Nigeria&apos;s trusted partner in construction solutions. Official distributor for premium cement brands and
+              comprehensive building materials.
             </p>
-            <div className="text-sm text-gray-400">
-              <p>RC: 1053055</p>
-              <p>Established: 2012</p>
+            <div className="flex space-x-4">
+              <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white">
+                <Facebook className="h-5 w-5" />
+              </Button>
+              <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white">
+                <Twitter className="h-5 w-5" />
+              </Button>
+              <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white">
+                <Instagram className="h-5 w-5" />
+              </Button>
+              <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white">
+                <Linkedin className="h-5 w-5" />
+              </Button>
             </div>
           </div>
 
@@ -74,7 +130,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
+                  <Link href={link.href} className="text-gray-400 hover:text-white transition-colors text-sm">
                     {link.name}
                   </Link>
                 </li>
@@ -82,68 +138,85 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Products */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Our Services</h4>
+            <h4 className="text-lg font-semibold mb-4">Our Products</h4>
             <ul className="space-y-2">
-              {services.map((service) => (
-                <li key={service.name}>
-                  <Link href={service.href} className="text-gray-300 hover:text-blue-400 transition-colors text-sm">
-                    {service.name}
+              {productLinks.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="text-gray-400 hover:text-white transition-colors text-sm">
+                    {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact & Newsletter */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
-            <div className="space-y-3">
-              <div className="flex items-start gap-2">
-                <MapPin className="h-4 w-4 text-blue-400 mt-1 flex-shrink-0" />
-                <div className="text-sm text-gray-300">
-                  <p>Head Office:</p>
-                  <p>97 Port Harcourt Road, beside GTBank</p>
-                  <p>Owerri, Imo State</p>
-                </div>
+            <h4 className="text-lg font-semibold mb-4">Stay Connected</h4>
+            <div className="space-y-3 mb-6">
+              <div className="flex items-center space-x-2 text-sm">
+                <Phone className="h-4 w-4 text-blue-400" />
+                <span className="text-gray-400">0906 736 1349</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-blue-400 flex-shrink-0" />
-                <div className="text-sm text-gray-300">
-                  <p className="font-semibold">0906 736 1349</p>
-                  <p>08036007621</p>
-                </div>
+              <div className="flex items-center space-x-2 text-sm">
+                <Mail className="h-4 w-4 text-blue-400" />
+                <span className="text-gray-400">info@global5050.com</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-blue-400 flex-shrink-0" />
-                <span className="text-sm text-gray-300">global5050conceptsnigltd@yahoo.com</span>
+              <div className="flex items-start space-x-2 text-sm">
+                <MapPin className="h-4 w-4 text-blue-400 mt-0.5" />
+                <span className="text-gray-400">97 Port Harcourt Road, Owerri</span>
               </div>
+            </div>
+
+            {/* Newsletter */}
+            <div>
+              <h5 className="font-medium mb-2">Newsletter</h5>
+              <form onSubmit={handleNewsletterSubmit} className="space-y-2">
+                <Input
+                  type="email"
+                  placeholder="Your email address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="bg-gray-800 border-gray-700 text-white placeholder-gray-400"
+                  required
+                />
+                <Button type="submit" disabled={isSubscribing} className="w-full bg-blue-600 hover:bg-blue-700">
+                  {isSubscribing ? "Subscribing..." : "Subscribe"}
+                </Button>
+              </form>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Bottom Footer */}
-      <div className="border-t border-gray-800">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-gray-400">
-              © {new Date().getFullYear()} Global 50:50 Concepts Nig. Ltd. All rights reserved.
-            </p>
-            <div className="flex items-center gap-4">
-              <span className="text-sm text-gray-400">Follow us:</span>
-              <div className="flex gap-2">
-                <Button variant="ghost" size="icon" className="h-8 w-8 text-gray-400 hover:text-blue-400">
-                  <Linkedin className="h-4 w-4" />
-                </Button>
-                <Button variant="ghost" size="icon" className="h-8 w-8 text-gray-400 hover:text-blue-400">
-                  <Facebook className="h-4 w-4" />
-                </Button>
-                <Button variant="ghost" size="icon" className="h-8 w-8 text-gray-400 hover:text-blue-400">
-                  <Twitter className="h-4 w-4" />
-                </Button>
+        {/* Locations */}
+        <div className="mt-12 pt-8 border-t border-gray-800">
+          <h4 className="text-lg font-semibold mb-6 text-center">Our Locations</h4>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {locations.map((location, index) => (
+              <div key={index} className="text-center">
+                <h5 className="font-medium text-white mb-2">{location.name}</h5>
+                <p className="text-gray-400 text-sm mb-1">{location.address}</p>
+                <p className="text-blue-400 text-sm">{location.phone}</p>
               </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom */}
+        <div className="mt-12 pt-8 border-t border-gray-800 text-center">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <p className="text-gray-400 text-sm">
+              © {new Date().getFullYear()} Global 50:50 Concepts Nigeria Limited. All rights reserved.
+            </p>
+            <div className="flex space-x-6 text-sm">
+              <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className="text-gray-400 hover:text-white transition-colors">
+                Terms of Service
+              </Link>
             </div>
           </div>
         </div>

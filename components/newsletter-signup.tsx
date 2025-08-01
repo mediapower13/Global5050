@@ -35,7 +35,8 @@ export default function NewsletterSignup() {
       } else {
         setStatus("error")
       }
-    } catch (error) {
+    } catch (err) {
+      console.error("Newsletter subscription error:", err)
       setStatus("error")
     } finally {
       setIsSubmitting(false)

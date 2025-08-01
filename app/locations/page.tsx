@@ -167,17 +167,18 @@ export default function LocationsPage() {
             {filteredLocations.map((location) => (
               <Card key={location.id} className="overflow-hidden hover:shadow-xl transition-shadow duration-300">
                 <div className="relative">
-                  <iframe
-                    src={location.mapUrl}
-                    width="100%"
-                    height="250"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    className="cursor-pointer"
-                    onClick={() => openInMaps(location.coordinates)}
-                  />
+                  <div className="cursor-pointer" onClick={() => openInMaps(location.coordinates)}>
+                    <iframe
+                      src={location.mapUrl}
+                      width="100%"
+                      height="250"
+                      className="border-0"
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title={`${location.name} Location`}
+                    />
+                  </div>
                   <Badge
                     className={`absolute top-4 left-4 ${location.type === "cement" ? "bg-blue-600" : "bg-gray-600"}`}
                   >

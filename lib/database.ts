@@ -1,27 +1,36 @@
-import { Pool } from "pg"
+// Simple database simulation for contact and newsletter submissions
+// In production, replace with actual database implementation
 
-// Create a connection pool
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: process.env.NODE_ENV === "production" ? { rejectUnauthorized: false } : false,
-  max: 20,
-  idleTimeoutMillis: 30000,
-  connectionTimeoutMillis: 2000,
-})
+// Database types
+interface ContactSubmission {
+  id: string
+  name: string
+  email: string
+  phone?: string
+  service?: string
+  message: string
+  ipAddress: string
+  userAgent: string
+  createdAt: Date
+}
 
-// Test the connection
-pool.on("connect", () => {
-  console.log("Connected to PostgreSQL database")
-})
+interface NewsletterSubscription {
+  id: string
+  email: string
+  ipAddress: string
+  userAgent: string
+  createdAt: Date
+}
 
-pool.on("error", (err) => {
-  console.error("Unexpected error on idle client", err)
-  process.exit(-1)
-})
+// In-memory storage (replace with actual database in production)
+const contactSubmissions: ContactSubmission[] = []
+const newsletterSubscriptions: NewsletterSubscription[] = []
 
-export { pool }
+function generateId(): string {
+  return Date.now().toString(36) + Math.random().toString(36).substr(2)
+}
 
-// Database helper functions
+// Database helper functions using in-memory storage for development
 export async function saveContactSubmission(data: {
   name: string
   email: string
@@ -31,28 +40,24 @@ export async function saveContactSubmission(data: {
   ipAddress?: string
   userAgent?: string
 }) {
-  const client = await pool.connect()
-  try {
-    const query = `
-      INSERT INTO contact_submissions (name, email, phone, service, message, ip_address, user_agent)
-      VALUES ($1, $2, $3, $4, $5, $6, $7)
-      RETURNING id, submitted_at
-    `
-    const values = [
-      data.name,
-      data.email,
-      data.phone || null,
-      data.service || null,
-      data.message,
-      data.ipAddress || null,
-      data.userAgent || null,
-    ]
-
-    const result = await client.query(query, values)
-    return result.rows[0]
-  } finally {
-    client.release()
+  const submission: ContactSubmission = {
+    id: generateId(),
+    name: data.name,
+    email: data.email,
+    phone: data.phone,
+    service: data.service,
+    message: data.message,
+    ipAddress: data.ipAddress || "unknown",
+    userAgent: data.userAgent || "unknown",
+    createdAt: new Date(),
   }
+  
+  contactSubmissions.push(submission)
+  
+  // Log to console for debugging
+  console.log("Contact submission saved:", submission)
+  
+  return { success: true, id: submission.id }
 }
 
 export async function saveNewsletterSubscription(data: {
@@ -60,57 +65,43 @@ export async function saveNewsletterSubscription(data: {
   ipAddress?: string
   userAgent?: string
 }) {
-  const client = await pool.connect()
-  try {
-    const query = `
-      INSERT INTO newsletter_subscriptions (email, ip_address, user_agent)
-      VALUES ($1, $2, $3)
-      ON CONFLICT (email) 
-      DO UPDATE SET 
-        status = 'active',
-        subscribed_at = CURRENT_TIMESTAMP,
-        unsubscribed_at = NULL,
-        updated_at = CURRENT_TIMESTAMP
-      RETURNING id, subscribed_at
-    `
-    const values = [data.email, data.ipAddress || null, data.userAgent || null]
-
-    const result = await client.query(query, values)
-    return result.rows[0]
-  } finally {
-    client.release()
+  // Check if email already exists
+  const existingSubscription = newsletterSubscriptions.find(sub => sub.email === data.email)
+  if (existingSubscription) {
+    return { success: true, id: existingSubscription.id, message: "Already subscribed" }
   }
+  
+  const subscription: NewsletterSubscription = {
+    id: generateId(),
+    email: data.email,
+    ipAddress: data.ipAddress || "unknown",
+    userAgent: data.userAgent || "unknown", 
+    createdAt: new Date(),
+  }
+  
+  newsletterSubscriptions.push(subscription)
+  
+  // Log to console for debugging
+  console.log("Newsletter subscription saved:", subscription)
+  
+  return { success: true, id: subscription.id }
 }
 
 export async function getContactSubmissions(limit = 50, offset = 0) {
-  const client = await pool.connect()
-  try {
-    const query = `
-      SELECT id, name, email, phone, service, message, status, submitted_at
-      FROM contact_submissions
-      ORDER BY submitted_at DESC
-      LIMIT $1 OFFSET $2
-    `
-    const result = await client.query(query, [limit, offset])
-    return result.rows
-  } finally {
-    client.release()
-  }
+  const submissions = contactSubmissions
+    .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())
+    .slice(offset, offset + limit)
+  
+  return submissions
 }
 
 export async function getNewsletterSubscriptions(limit = 50, offset = 0) {
-  const client = await pool.connect()
-  try {
-    const query = `
-      SELECT id, email, status, subscribed_at
-      FROM newsletter_subscriptions
-      WHERE status = 'active'
-      ORDER BY subscribed_at DESC
-      LIMIT $1 OFFSET $2
-    `
-    const result = await client.query(query, [limit, offset])
-    return result.rows
-  } finally {
-    client.release()
-  }
+  const subscriptions = newsletterSubscriptions
+    .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())
+    .slice(offset, offset + limit)
+  
+  return subscriptions
 }
+
+// Export types for use in other files
+export type { ContactSubmission, NewsletterSubscription }

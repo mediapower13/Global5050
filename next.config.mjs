@@ -6,14 +6,14 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  swcMinify: false,
+  experimental: {
+    forceSwcTransforms: false,
+  },
   images: {
-    domains: ['placeholder.svg'],
+    domains: ['placeholder.svg', 'hebbkx1anhila5yf.public.blob.vercel-storage.com'],
     unoptimized: true,
   },
-  // Enable static export for traditional hosting if needed
-  // output: 'export',
-  // trailingSlash: true,
-  
   // Environment variables
   env: {
     CUSTOM_KEY: process.env.CUSTOM_KEY,

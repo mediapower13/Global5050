@@ -78,7 +78,7 @@ export default function HomePage() {
             className={`max-w-4xl transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
           >
             <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6">
-              Building Nigeria's
+              Building Nigeria&apos;s
               <span className="block text-blue-300">Future Together</span>
             </h1>
 
@@ -139,7 +139,7 @@ export default function HomePage() {
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Premium Cement Brands</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Official distributor for Nigeria's most trusted cement manufacturers
+              Official distributor for Nigeria&apos;s most trusted cement manufacturers
             </p>
           </div>
 
@@ -147,8 +147,7 @@ export default function HomePage() {
           <div className="relative max-w-6xl mx-auto">
             <div className="overflow-hidden rounded-lg shadow-2xl">
               <div
-                className="flex transition-transform duration-700 ease-in-out"
-                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                className={`flex transition-transform duration-700 ease-in-out carousel-slide-${currentSlide}`}
               >
                 {productSlides.map((slide, index) => (
                   <div key={index} className="w-full flex-shrink-0">
@@ -193,6 +192,8 @@ export default function HomePage() {
                   className={`w-3 h-3 rounded-full transition-colors duration-300 ${
                     index === currentSlide ? "bg-blue-600" : "bg-gray-300"
                   }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                  title={`Slide ${index + 1}`}
                 />
               ))}
             </div>
@@ -201,12 +202,16 @@ export default function HomePage() {
             <button
               onClick={() => setCurrentSlide((prev) => (prev - 1 + productSlides.length) % productSlides.length)}
               className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-lg transition-all duration-300"
+              aria-label="Previous slide"
+              title="Previous slide"
             >
               <ArrowRight className="h-5 w-5 rotate-180" />
             </button>
             <button
               onClick={() => setCurrentSlide((prev) => (prev + 1) % productSlides.length)}
               className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-3 rounded-full shadow-lg transition-all duration-300"
+              aria-label="Next slide"
+              title="Next slide"
             >
               <ArrowRight className="h-5 w-5" />
             </button>
@@ -289,7 +294,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">Ready to Build Your Vision?</h2>
           <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
-            Partner with Nigeria's trusted construction solutions provider
+            Partner with Nigeria&apos;s trusted construction solutions provider
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

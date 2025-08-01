@@ -61,13 +61,7 @@ export default function SandAggregatesPage() {
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-r from-orange-900 via-yellow-800 to-gray-900 text-white">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-          style={{
-            backgroundImage:
-              "url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/SHARP-SAND.jpg-aDgCvCLGRVLLlzaltZMJtd5EHNAr4s.jpeg')",
-          }}
-        />
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 hero-bg-sand" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center animate-fade-in-up">
             <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">

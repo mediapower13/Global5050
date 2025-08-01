@@ -88,8 +88,6 @@ export default function ProjectsPage() {
 
   const [activeFilter, setActiveFilter] = useState("all")
 
-  const projectCategories = ["all", "cement", "construction", "plastic", "mixed"]
-
   const filteredProjects = projects.filter((project) => {
     if (activeFilter === "all") return true
     if (activeFilter === "cement") return project.category === "Cement Distribution"
@@ -105,9 +103,9 @@ export default function ProjectsPage() {
       <section className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <h1 className="text-4xl lg:text-5xl font-bold mb-4">Projects We're Proud Of</h1>
+            <h1 className="text-4xl lg:text-5xl font-bold mb-4">Projects We&apos;re Proud Of</h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              Every successful project starts with reliable suppliers. Here are some of the builds we've been part of
+              Every successful project starts with reliable suppliers. Here are some of the builds we&apos;ve been part of
               across Nigeria.
             </p>
           </div>
@@ -259,7 +257,7 @@ export default function ProjectsPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">Your Project Could Be Next</h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Big or small, residential or commercial, we've got the experience and inventory to make your project a
+            Big or small, residential or commercial, we&apos;ve got the experience and inventory to make your project a
             success story too.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

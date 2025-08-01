@@ -117,13 +117,7 @@ export default function ConstructionServicesPage() {
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-r from-blue-900 via-blue-800 to-gray-900 text-white">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-          style={{
-            backgroundImage:
-              "url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dangote%20global.jpg-GD4UJjdfdU4eRVS2c8VEqOgNNp4xdI.jpeg')",
-          }}
-        />
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 hero-bg-dangote" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center animate-fade-in-up">
             <h1 className="text-5xl lg:text-6xl font-bold mb-6">Construction Services</h1>

@@ -180,7 +180,6 @@ export default function AboutPage() {
                 <div
                   key={index}
                   className="bg-white/10 backdrop-blur-sm rounded-lg p-4 animate-scale-in"
-                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="text-3xl font-bold text-white mb-1">{stat.number}</div>
                   <div className="text-blue-200 text-sm">{stat.label}</div>
@@ -238,7 +237,7 @@ export default function AboutPage() {
                   <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
                     <p>
                       When we established Global 50:50 Concepts Nig. Ltd. in 2012, our vision was clear: to become
-                      Nigeria's most trusted supplier of premium construction materials and comprehensive building
+                      Nigeria&apos;s most trusted supplier of premium construction materials and comprehensive building
                       solutions.
                     </p>
                     <p>
