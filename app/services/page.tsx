@@ -35,7 +35,7 @@ export default function ServicesPage() {
         "Building Permit Documentation",
         "Construction Supervision",
       ],
-      image: "/placeholder.svg?height=300&width=400&text=Architectural+Design",
+      image: "/architectural-design.jpg",
     },
     {
       icon: Building2,
@@ -50,7 +50,7 @@ export default function ServicesPage() {
         "Quality Control and Supervision",
         "Project Management Services",
       ],
-      image: "/placeholder.svg?height=300&width=400&text=Building+Construction",
+      image: "/construction-site.jpg",
     },
     {
       icon: Truck,
@@ -71,16 +71,16 @@ export default function ServicesPage() {
       icon: Package,
       title: "Plastic Products Wholesale",
       description:
-        "Comprehensive range of plastic products from our Kwara warehouses, serving the North-Central region with competitive bulk pricing",
+        "Comprehensive range of plastic products from our Kwara operating office, serving the North-Central region with competitive bulk pricing",
       features: [
         "Industrial Plastic Containers",
         "Household Plastic Items",
         "Storage and Packaging Solutions",
         "Custom Plastic Products",
         "Bulk Wholesale Pricing",
-        "Direct Warehouse Pickup Available",
+        "Direct Operating Office Pickup Available",
       ],
-      image: "/placeholder.svg?height=300&width=400&text=Plastic+Products",
+      image: "/plastic-bowls.jpg",
     },
     {
       icon: Settings,
@@ -94,7 +94,7 @@ export default function ServicesPage() {
         "Tiles and Finishing Materials",
         "Hardware and Tools",
       ],
-      image: "/placeholder.svg?height=300&width=400&text=Construction+Materials",
+      image: "/engineering-planning.jpg",
     },
   ]
 

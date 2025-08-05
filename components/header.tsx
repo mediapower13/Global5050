@@ -61,7 +61,7 @@ export default function Header() {
       dropdown: [
         { name: "All Locations", href: "/locations" },
         { name: "Cement Centers", href: "/locations#cement" },
-        { name: "Plastic Warehouses", href: "/locations#plastic" },
+        { name: "Plastic Operating Offices", href: "/locations#plastic" },
       ],
     },
   ]

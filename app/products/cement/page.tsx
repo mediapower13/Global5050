@@ -32,9 +32,8 @@ export default function CementProductsPage() {
           features: ["Quick repair", "Strong adhesion", "Weather resistant"],
         },
       ],
-      image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lafarge%20.jpg-s9FYIJ2SPDi8KwGurrJzWclXIjUQ5m.jpeg",
-      logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lafarge%20.jpg-s9FYIJ2SPDi8KwGurrJzWclXIjUQ5m.jpeg",
+      image: "/lafarge cement new.webp",
+      logo: "/lafarge cement new.webp",
     },
     {
       name: "Dangote Cement PLC",

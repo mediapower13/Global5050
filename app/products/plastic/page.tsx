@@ -11,29 +11,27 @@ export default function PlasticProductsPage() {
       name: "Industrial Containers",
       description: "Heavy-duty plastic containers for industrial use",
       features: ["Chemical resistant", "Various sizes", "Stackable design", "Durable construction"],
-      image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/industrial%20containers.jpg-MaSgUmCpepx84baKiRJ91dVapRq26A.jpeg",
+      image: "/plastic-containers-new.jpg",
       applications: ["Industrial storage", "Chemical transport", "Warehouse organization", "Manufacturing"],
     },
     {
       name: "Household Items",
       description: "Quality plastic products for domestic use",
       features: ["Food grade", "Durable material", "Affordable prices", "Colorful designs"],
-      image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/household%20items.jpg-M74ClQefrQ95lYUwwKrfU2BSjMvaWU.jpeg",
+      image: "/plastic-bowls.jpg",
       applications: ["Home storage", "Kitchen use", "Retail display", "Daily household needs"],
     },
   ]
 
   const locations = [
     {
-      name: "Kwara Warehouse - Olunlade",
+      name: "Kwara Operating Office - Olunlade",
       address: "Opposite Latara, Olunlade, Ilorin",
       speciality: "Primary plastic products distribution center",
       phone: "08036007621",
     },
     {
-      name: "Kwara Warehouse - Idi Ori",
+      name: "Kwara Operating Office - Idi Ori",
       address: "Opposite Al-Mahruf Filling Station, Idi Ori",
       speciality: "Secondary plastic products warehouse and storage facility",
       phone: "08054186884",
@@ -46,8 +44,8 @@ export default function PlasticProductsPage() {
       description: "Special rates for large quantity orders",
     },
     {
-      title: "Direct Warehouse Pickup",
-      description: "Convenient pickup from our Kwara locations",
+      title: "Direct Operating Office Pickup",
+      description: "Convenient pickup from our Kwara operating office locations",
     },
     {
       title: "Quality Assurance",
@@ -71,7 +69,7 @@ export default function PlasticProductsPage() {
             </div>
             <h1 className="text-5xl lg:text-6xl font-bold mb-6">Plastic Products</h1>
             <p className="text-xl text-gray-200 max-w-3xl mx-auto mb-8">
-              Comprehensive range of quality plastic products from our Kwara warehouses, serving the North-Central
+              Comprehensive range of quality plastic products from our Kwara operating office, serving the North-Central
               region with competitive bulk pricing.
             </p>
             <Button asChild size="lg" className="bg-purple-600 hover:bg-purple-700">
@@ -110,22 +108,22 @@ export default function PlasticProductsPage() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="space-y-16">
             {plasticProducts.map((product, index) => (
               <div
                 key={index}
-                className={`grid lg:grid-cols-2 gap-8 items-center ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""}`}
+                className="grid lg:grid-cols-2 gap-8 items-center"
               >
-                <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
+                <div>
                   <Image
-                    src={product.image || "/placeholder.svg"}
+                    src={product.image || "/placeholder.jpg"}
                     alt={product.name}
                     width={500}
                     height={400}
                     className="rounded-lg shadow-lg w-full hover-lift"
                   />
                 </div>
-                <div className={index % 2 === 1 ? "lg:col-start-1" : ""}>
+                <div>
                   <Card className="border-none shadow-none">
                     <CardHeader>
                       <div className="flex items-center gap-2 mb-2">
@@ -172,11 +170,11 @@ export default function PlasticProductsPage() {
         </div>
       </section>
 
-      {/* Warehouse Locations */}
+      {/* Operating Office Locations */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Plastic Warehouses</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Plastic Operating Offices</h2>
             <p className="text-xl text-gray-600">Strategic locations in Kwara State for easy access</p>
           </div>
 
@@ -225,9 +223,9 @@ export default function PlasticProductsPage() {
                   <CheckCircle className="h-5 w-5 text-green-400" />
                   <span>Flexible payment terms</span>
                 </li>
-                <li className="flex items-center gap-3">
+                                <li className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-green-400" />
-                  <span>Direct warehouse pickup</span>
+                  <span>Direct operating office pickup</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-green-400" />
@@ -243,8 +241,8 @@ export default function PlasticProductsPage() {
             </div>
             <div>
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/industrial%20containers.jpg-MaSgUmCpepx84baKiRJ91dVapRq26A.jpeg"
-                alt="Plastic products warehouse"
+                src="/plastic-containers-new.jpg"
+                alt="Plastic products operating office"
                 width={500}
                 height={400}
                 className="rounded-lg shadow-lg"

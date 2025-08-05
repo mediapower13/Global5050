@@ -15,7 +15,7 @@ export default function ProjectsPage() {
       description:
         "When they needed 800 bags of premium cement fast, we delivered. Dangote and BUA cement plus all the aggregates for this major residential project",
       category: "Cement Distribution",
-      location: "Lagos State",
+      location: "Lagos (Head Office)",
       year: "2023",
       materials: [
         "Dangote Cement (500 bags)",
@@ -30,7 +30,7 @@ export default function ProjectsPage() {
       title: "Owerri Commercial Complex",
       description: "Complete material supply and facility management for commercial building",
       category: "Mixed Services",
-      location: "Owerri, Imo State",
+      location: "Owerri (Operating Office)",
       year: "2023",
       materials: ["Lafarge Cement", "Decorative Chippings", "Concrete Blocks", "Facility Management", "Procurement"],
       image: "/placeholder.svg?height=300&width=400",
@@ -40,7 +40,7 @@ export default function ProjectsPage() {
       description:
         "A manufacturing plant that couldn't afford downtime. We set up their entire LPG supply chain and keep it running 24/7",
       category: "Gas Operations",
-      location: "Abuja",
+      location: "Abuja (Operating Office)",
       year: "2023",
       materials: [
         "Monthly LPG Supply (50 tons)",
@@ -54,7 +54,7 @@ export default function ProjectsPage() {
       title: "School Infrastructure Project",
       description: "Comprehensive construction materials supply for educational facility",
       category: "Construction Materials",
-      location: "Port Harcourt",
+      location: "Port Harcourt (Operating Office)",
       year: "2022",
       materials: ["BUA Cement", "Blocks", "Roofing Materials", "Electrical Supplies"],
       image: "/placeholder.svg?height=300&width=400",
@@ -63,10 +63,10 @@ export default function ProjectsPage() {
       title: "Plastic Wholesale Distribution",
       description: "Large-scale plastic products supply to retail chains across North-Central Nigeria",
       category: "Plastic Wholesale",
-      location: "Kwara State",
+      location: "Kwara (Operating Office)",
       year: "2023",
       materials: ["Plastic Containers (10,000 units)", "Industrial Plastics", "Household Items", "Custom Orders"],
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/plastic-bowls.jpg",
     },
     {
       title: "Residential Gas Installation",
@@ -240,7 +240,7 @@ export default function ProjectsPage() {
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <Package className="h-12 w-12 text-purple-600 mx-auto mb-4" />
               <h3 className="font-semibold text-lg mb-2">Plastic Wholesale</h3>
-              <p className="text-gray-600 text-sm">Bulk plastic products from Kwara warehouses</p>
+              <p className="text-gray-600 text-sm">Bulk plastic products from Kwara operating offices</p>
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-md text-center">

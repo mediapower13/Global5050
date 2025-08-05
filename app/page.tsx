@@ -24,8 +24,7 @@ export default function HomePage() {
 
   const productSlides = [
     {
-      image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lafarge%20.jpg-s9FYIJ2SPDi8KwGurrJzWclXIjUQ5m.jpeg",
+      image: "/lafarge cement new.webp",
       title: "Lafarge Cement Products",
       subtitle: "Supaset • Unicem • Watershed • Supafix",
       description: "Premium quality cement from one of Africa's leading manufacturers",
@@ -112,7 +111,7 @@ export default function HomePage() {
               </div>
               <div className="flex items-center gap-3">
                 <MapPin className="h-4 w-4 md:h-5 md:w-5 text-blue-300" />
-                <span className="text-xs md:text-sm">97 Port Harcourt Road, Owerri</span>
+                <span className="text-xs md:text-sm">Lagos Head Office</span>
               </div>
             </div>
           </div>
@@ -252,15 +251,22 @@ export default function HomePage() {
             </Card>
 
             <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
-              <div className="relative h-64 bg-gradient-to-br from-gray-600 to-gray-800">
+              <div className="relative h-64">
+                <Image
+                  src="/plastic-bowls.jpg"
+                  alt="Plastic Products"
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/40" />
                 <div className="absolute bottom-4 left-4">
                   <h3 className="text-white text-xl font-bold">Plastic Products</h3>
                 </div>
               </div>
               <CardContent className="p-6">
-                <p className="text-gray-600 mb-4">Quality plastic products from our Kwara warehouses</p>
+                <p className="text-gray-600 mb-4">Quality plastic products from our Kwara operating office</p>
                 <Button asChild variant="outline" className="w-full bg-transparent">
-                  <Link href="/products/others">Learn More</Link>
+                  <Link href="/products/plastic">Learn More</Link>
                 </Button>
               </CardContent>
             </Card>

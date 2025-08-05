@@ -34,7 +34,7 @@ export default function TestimonialsPage() {
       rating: 5,
       image: "/placeholder.svg?height=80&width=80&text=Customer+3",
       testimonial:
-        "Best plastic wholesale prices in North-Central Nigeria. Their Kwara warehouse makes pickup convenient, and bulk discounts help our profit margins. Been buying from them for 3 years now.",
+        "Best plastic wholesale prices in North-Central Nigeria. Their Kwara operating office makes pickup convenient, and bulk discounts help our profit margins. Been buying from them for 3 years now.",
       project: "Plastic Products Wholesale",
     },
     {

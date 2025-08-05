@@ -26,7 +26,7 @@ export default function ConstructionServicesPage() {
         "3D modeling and visualization",
         "Final documentation and permits",
       ],
-      image: "/placeholder.svg?height=300&width=400&text=Architectural+Design",
+      image: "/architectural-design.jpg",
     },
     {
       icon: Building2,
@@ -47,7 +47,7 @@ export default function ConstructionServicesPage() {
         "Interior and exterior finishing",
         "Final inspection and handover",
       ],
-      image: "/placeholder.svg?height=300&width=400&text=Building+Construction",
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dangote%20global.jpg-GD4UJjdfdU4eRVS2c8VEqOgNNp4xdI.jpeg",
     },
     {
       icon: Settings,
@@ -68,7 +68,7 @@ export default function ConstructionServicesPage() {
         "Execution monitoring",
         "Quality control and delivery",
       ],
-      image: "/placeholder.svg?height=300&width=400&text=Project+Management",
+      image: "/engineering-planning.jpg",
     },
   ]
 
@@ -94,22 +94,22 @@ export default function ConstructionServicesPage() {
     {
       name: "Residential Buildings",
       description: "Houses, apartments, and residential complexes",
-      image: "/placeholder.svg?height=200&width=300&text=Residential",
+      image: "/architectural-design.jpg",
     },
     {
       name: "Commercial Buildings",
       description: "Offices, retail spaces, and commercial complexes",
-      image: "/placeholder.svg?height=200&width=300&text=Commercial",
+      image: "/construction-site.jpg",
     },
     {
       name: "Industrial Facilities",
       description: "Warehouses, factories, and industrial structures",
-      image: "/placeholder.svg?height=200&width=300&text=Industrial",
+      image: "/construction-workers.jpg",
     },
     {
       name: "Institutional Buildings",
       description: "Schools, hospitals, and public buildings",
-      image: "/placeholder.svg?height=200&width=300&text=Institutional",
+      image: "/engineering-planning.jpg",
     },
   ]
 

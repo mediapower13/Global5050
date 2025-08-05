@@ -69,17 +69,17 @@ export default function Footer() {
 
   const locations = [
     {
-      name: "Head Office - Owerri",
+      name: "Lagos Head Office",
+      address: "1B Maboreje Street, Agbede, Agric, Ikorodu",
+      phone: "08036007621",
+    },
+    {
+      name: "Owerri Operating Office",
       address: "97 Port Harcourt Road, beside GTBank",
       phone: "0906 736 1349",
     },
     {
-      name: "Lagos Office",
-      address: "Lagos State",
-      phone: "08036007621",
-    },
-    {
-      name: "Kwara Warehouse",
+      name: "Kwara Operating Office",
       address: "Olunlade, Ilorin",
       phone: "08054186884",
     },

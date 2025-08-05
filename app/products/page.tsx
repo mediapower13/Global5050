@@ -11,16 +11,15 @@ export default function ProductsPage() {
       description: "Official distributor for Nigeria's leading cement manufacturers",
       icon: Building2,
       image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/global5050%20cement%20logo%20.jpg-fq93MY9myi0sgEbqvgWMCcMVnQPIbO.jpeg",
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/plastic%20%20products-5YKrhvIlNNj6hvKu4bpR55jB0WRDJ7.jpg",
       href: "/products/cement",
       features: ["Lafarge Africa Plc", "Dangote Cement PLC", "BUA Cement", "Mangal Cement"],
     },
     {
       title: "Plastic Products",
-      description: "Quality plastic products from our Kwara warehouses",
+      description: "Quality plastic products from our Kwara operating office",
       icon: Package,
-      image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/industrial%20containers.jpg-MaSgUmCpepx84baKiRJ91dVapRq26A.jpeg",
+      image: "/plastic-containers-new.jpg",
       href: "/products/plastic",
       features: ["Industrial Containers", "Household Items", "Bulk Wholesale", "Custom Orders"],
     },
@@ -48,9 +47,9 @@ export default function ProductsPage() {
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-r from-blue-900 via-blue-800 to-gray-900 text-white">
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30 hero-bg-dangote" />
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30" />
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center animate-fade-in-up">
+          <div className="text-center">
             <h1 className="text-5xl lg:text-6xl font-bold mb-6">Products & Services</h1>
             <p className="text-xl text-gray-200 max-w-3xl mx-auto mb-8">
               Comprehensive construction solutions from premium cement distribution to complete building services across
@@ -75,8 +74,7 @@ export default function ProductsPage() {
             {productCategories.map((category, index) => (
               <Card
                 key={index}
-                className="overflow-hidden hover-lift animate-scale-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="overflow-hidden transition-transform hover:scale-105"
               >
                 <div className="relative">
                   <Image
@@ -135,7 +133,7 @@ export default function ProductsPage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="text-center hover-lift">
+            <Card className="text-center transition-transform hover:scale-105">
               <CardContent className="pt-8">
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lafarge%20.jpg-s9FYIJ2SPDi8KwGurrJzWclXIjUQ5m.jpeg"
@@ -149,7 +147,7 @@ export default function ProductsPage() {
               </CardContent>
             </Card>
 
-            <Card className="text-center hover-lift">
+            <Card className="text-center transition-transform hover:scale-105">
               <CardContent className="pt-8">
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dangote.jpg-lGHcpL3le88fhqNLflCtX6HuYGAfGZ.jpeg"
@@ -163,7 +161,7 @@ export default function ProductsPage() {
               </CardContent>
             </Card>
 
-            <Card className="text-center hover-lift">
+            <Card className="text-center transition-transform hover:scale-105">
               <CardContent className="pt-8">
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bua-LpZrBbRtrccgEhaEnm52Z6Heu1zvVN.png"
@@ -177,7 +175,7 @@ export default function ProductsPage() {
               </CardContent>
             </Card>
 
-            <Card className="text-center hover-lift">
+            <Card className="text-center transition-transform hover:scale-105">
               <CardContent className="pt-8">
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/mangal-7WhEWKzVD7Mjvp92GSDVJVu1H81nv6.jpeg"

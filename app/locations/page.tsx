@@ -14,33 +14,33 @@ export default function LocationsPage() {
   const locations = [
     {
       id: 1,
-      name: "Owerri Head Office",
+      name: "Lagos Head Office",
       type: "cement",
-      address: "97 Port Harcourt Road, beside GTBank, Owerri, Imo State",
-      coordinates: { lat: 5.484, lng: 7.0302 },
-      phone: "0906 736 1349",
+      address: "1B Maboreje Street, Agbede, Agric, Ikorodu, Lagos State",
+      coordinates: { lat: 6.5244, lng: 3.3792 },
+      phone: "08036007621",
       hours: "Mon-Sat: 8:00 AM - 6:00 PM",
-      services: ["Cement Distribution", "Construction Services", "Project Management"],
-      description: "Our main headquarters and primary cement distribution center",
+      services: ["Main Operations", "Strategic Planning", "Corporate Management"],
+      description: "Our main headquarters and primary business operations center",
       mapUrl:
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.123456789!2d7.0302!3d5.4840!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMjknMDIuNCJOIDfCsDAxJzQ4LjciRQ!5e0!3m2!1sen!2sng!4v1234567890123!5m2!1sen!2sng",
     },
     {
       id: 2,
-      name: "Lagos Branch",
+      name: "Owerri Operating Office",
       type: "cement",
-      address: "Agbede, Agric area, Lagos State",
-      coordinates: { lat: 6.6134, lng: 3.5021 },
-      phone: "08036007621",
+      address: "97 Port Harcourt Road, beside GTBank, Owerri, Imo State",
+      coordinates: { lat: 5.484, lng: 7.0302 },
+      phone: "0906 736 1349",
       hours: "Mon-Sat: 8:00 AM - 6:00 PM",
-      services: ["Cement Distribution", "Bulk Orders"],
-      description: "Strategic location serving Lagos and Southwest Nigeria",
+      services: ["Cement Distribution", "Construction Services", "Regional Operations"],
+      description: "Operating office serving Southeast Nigeria with full cement distribution services",
       mapUrl:
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.123456789!2d3.5021!3d6.6134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMzYnNDguMiJOIDPCsDMwJzA3LjYiRQ!5e0!3m2!1sen!2sng!4v1234567890123!5m2!1sen!2sng",
     },
     {
       id: 3,
-      name: "Abuja Center",
+      name: "Abuja Operating Office",
       type: "cement",
       address: "Kado Estate, Abuja, FCT",
       coordinates: { lat: 9.0765, lng: 7.4921 },
@@ -53,40 +53,40 @@ export default function LocationsPage() {
     },
     {
       id: 4,
-      name: "Port Harcourt Office",
+      name: "Port Harcourt Operating Office",
       type: "cement",
       address: "GRA Phase 2, Port Harcourt, Rivers State",
       coordinates: { lat: 4.8156, lng: 7.0134 },
       phone: "0906 736 1349",
       hours: "Mon-Sat: 8:00 AM - 6:00 PM",
-      services: ["Cement Distribution", "Oil & Gas Projects"],
-      description: "Strategic location for South-South Nigeria operations",
+      services: ["Cement Distribution", "Oil & Gas Projects", "Regional Operations"],
+      description: "Operating office for South-South Nigeria operations and oil & gas sector support",
       mapUrl:
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.123456789!2d7.0134!3d4.8156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwNDgnNTYuMiJOIDfCsDAwJzQ4LjIiRQ!5e0!3m2!1sen!2sng!4v1234567890123!5m2!1sen!2sng",
     },
     {
       id: 5,
-      name: "Kwara Warehouse - Olunlade",
+      name: "Kwara Operating Office - Olunlade",
       type: "plastic",
       address: "Opposite Latara, Olunlade, Ilorin, Kwara State",
       coordinates: { lat: 8.4799, lng: 4.5421 },
       phone: "08036007621",
       hours: "Mon-Sat: 8:00 AM - 6:00 PM",
-      services: ["Plastic Products Wholesale", "Industrial Containers"],
-      description: "Primary plastic products distribution center",
+      services: ["Plastic Products Wholesale", "Industrial Containers", "Regional Operations"],
+      description: "Primary plastic products distribution and operating center",
       mapUrl:
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.123456789!2d4.5421!3d8.4799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwMjgnNDcuNiJOIDTCsDMyJzMxLjYiRQ!5e0!3m2!1sen!2sng!4v1234567890123!5m2!1sen!2sng",
     },
     {
       id: 6,
-      name: "Kwara Warehouse - Idi Ori",
+      name: "Kwara Operating Office - Idi Ori",
       type: "plastic",
       address: "Opposite Al-Mahruf Filling Station, Idi Ori, Ilorin, Kwara State",
       coordinates: { lat: 8.4899, lng: 4.5521 },
       phone: "08054186884",
       hours: "Mon-Sat: 8:00 AM - 6:00 PM",
-      services: ["Plastic Products Storage", "Household Items"],
-      description: "Secondary plastic products warehouse and storage facility",
+      services: ["Plastic Products Storage", "Household Items", "Regional Support"],
+      description: "Secondary plastic products operating office and storage facility",
       mapUrl:
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.123456789!2d4.5521!3d8.4899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwMjknMjMuNiJOIDTCsDMzJzA3LjYiRQ!5e0!3m2!1sen!2sng!4v1234567890123!5m2!1sen!2sng",
     },
@@ -154,7 +154,7 @@ export default function LocationsPage() {
               variant={activeFilter === "plastic" ? "default" : "outline"}
               className={activeFilter === "plastic" ? "bg-blue-600 hover:bg-blue-700" : ""}
             >
-              Plastic Warehouses ({locations.filter((l) => l.type === "plastic").length})
+              Plastic Operating Offices ({locations.filter((l) => l.type === "plastic").length})
             </Button>
           </div>
         </div>
@@ -182,7 +182,7 @@ export default function LocationsPage() {
                   <Badge
                     className={`absolute top-4 left-4 ${location.type === "cement" ? "bg-blue-600" : "bg-gray-600"}`}
                   >
-                    {location.type === "cement" ? "Cement Center" : "Plastic Warehouse"}
+                    {location.type === "cement" ? "Cement Operating Office" : "Plastic Operating Office"}
                   </Badge>
                 </div>
 
@@ -272,7 +272,7 @@ export default function LocationsPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">Lagos, Ogun, Oyo, Osun, Ondo, Ekiti</p>
-                <p className="text-sm text-gray-500 mt-2">Served from Lagos Branch</p>
+                <p className="text-sm text-gray-500 mt-2">Served from Lagos Head Office</p>
               </CardContent>
             </Card>
 
@@ -322,7 +322,7 @@ export default function LocationsPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">Nationwide plastic distribution</p>
-                <p className="text-sm text-gray-500 mt-2">From Kwara warehouses</p>
+                <p className="text-sm text-gray-500 mt-2">From Kwara operating offices</p>
               </CardContent>
             </Card>
           </div>

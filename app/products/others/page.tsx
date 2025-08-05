@@ -37,7 +37,7 @@ export default function OtherProductsPage() {
     },
     {
       title: "Plastic Products",
-      description: "Comprehensive range from our Kwara warehouses",
+      description: "Comprehensive range from our Kwara operating offices",
       icon: Package,
       products: [
         {
@@ -93,25 +93,25 @@ export default function OtherProductsPage() {
     },
   ]
 
-  const locations = [
-    {
-      name: "Kwara Warehouse - Olunlade",
-      address: "Opposite Latara, Olunlade, Ilorin",
-      speciality: "Plastic Products Wholesale",
-    },
-    {
-      name: "Kwara Warehouse - Idi Ori",
-      address: "Opposite Al-Mahruf Filling Station, Idi Ori",
-      speciality: "Plastic Products & Storage",
-    },
-    {
-      name: "Owerri Head Office",
-      address: "97 Port Harcourt Road, beside GTBank",
-      speciality: "All Construction Materials",
-    },
-  ]
+const locations = [
+  {
+    name: "Kwara Operating Office - Olunlade",
+    address: "Opposite Latara, Olunlade, Ilorin",
+    speciality: "Plastic Products Wholesale",
+  },
+  {
+    name: "Kwara Operating Office - Idi Ori",
+    address: "Opposite Al-Mahruf Filling Station, Idi Ori",
+    speciality: "Plastic Products & Storage",
+  },
+  {
+    name: "Lagos Head Office",
+    address: "1B Maboreje Street, Agbede, Agric, Ikorodu",
+    speciality: "All Construction Materials",
+  },
+]
 
-  return (
+return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 bg-gradient-to-r from-gray-900 via-gray-800 to-blue-900 text-white">
@@ -235,7 +235,7 @@ export default function OtherProductsPage() {
                 </li>
                 <li className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-green-400" />
-                  <span>Direct warehouse pickup</span>
+                  <span>Direct operating office pickup</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-green-400" />
@@ -252,7 +252,7 @@ export default function OtherProductsPage() {
             <div>
               <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/industrial%20containers.jpg-MaSgUmCpepx84baKiRJ91dVapRq26A.jpeg"
-                alt="Bulk products warehouse"
+                alt="Bulk products operating office"
                 width={500}
                 height={400}
                 className="rounded-lg shadow-lg"
