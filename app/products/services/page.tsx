@@ -94,12 +94,12 @@ export default function ConstructionServicesPage() {
     {
       name: "Residential Buildings",
       description: "Houses, apartments, and residential complexes",
-      image: "/architectural-design.jpg",
+      image: "/residential building.webp",
     },
     {
       name: "Commercial Buildings",
       description: "Offices, retail spaces, and commercial complexes",
-      image: "/construction-site.jpg",
+      image: "/commercial building.jpeg",
     },
     {
       name: "Industrial Facilities",
@@ -109,7 +109,7 @@ export default function ConstructionServicesPage() {
     {
       name: "Institutional Buildings",
       description: "Schools, hospitals, and public buildings",
-      image: "/engineering-planning.jpg",
+      image: "/institutional building.jpeg",
     },
   ]
 

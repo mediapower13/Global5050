@@ -11,7 +11,7 @@ export default function ProductsPage() {
       description: "Official distributor for Nigeria's leading cement manufacturers",
       icon: Building2,
       image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/plastic%20%20products-5YKrhvIlNNj6hvKu4bpR55jB0WRDJ7.jpg",
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dangote%20global.jpg-GD4UJjdfdU4eRVS2c8VEqOgNNp4xdI.jpeg",
       href: "/products/cement",
       features: ["Lafarge Africa Plc", "Dangote Cement PLC", "BUA Cement", "Mangal Cement"],
     },

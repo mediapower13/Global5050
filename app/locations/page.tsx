@@ -66,14 +66,14 @@ export default function LocationsPage() {
     },
     {
       id: 5,
-      name: "Kwara Operating Office - Olunlade",
+      name: "Plastic Division Head Office - Olunlade",
       type: "plastic",
       address: "Opposite Latara, Olunlade, Ilorin, Kwara State",
       coordinates: { lat: 8.4799, lng: 4.5421 },
       phone: "08036007621",
       hours: "Mon-Sat: 8:00 AM - 6:00 PM",
-      services: ["Plastic Products Wholesale", "Industrial Containers", "Regional Operations"],
-      description: "Primary plastic products distribution and operating center",
+      services: ["Plastic Products Wholesale", "Industrial Containers", "Regional Operations", "Plastic Division HQ"],
+      description: "Head office for plastic products division and primary distribution center",
       mapUrl:
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.123456789!2d4.5421!3d8.4799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwMjgnNDcuNiJOIDTCsDMyJzMxLjYiRQ!5e0!3m2!1sen!2sng!4v1234567890123!5m2!1sen!2sng",
     },
@@ -147,14 +147,14 @@ export default function LocationsPage() {
               variant={activeFilter === "cement" ? "default" : "outline"}
               className={activeFilter === "cement" ? "bg-blue-600 hover:bg-blue-700" : ""}
             >
-              Cement Centers ({locations.filter((l) => l.type === "cement").length})
+              Cement Distribution ({locations.filter((l) => l.type === "cement").length})
             </Button>
             <Button
               onClick={() => setActiveFilter("plastic")}
               variant={activeFilter === "plastic" ? "default" : "outline"}
-              className={activeFilter === "plastic" ? "bg-blue-600 hover:bg-blue-700" : ""}
+              className={activeFilter === "plastic" ? "bg-green-600 hover:bg-green-700" : ""}
             >
-              Plastic Operating Offices ({locations.filter((l) => l.type === "plastic").length})
+              Plastic Division ({locations.filter((l) => l.type === "plastic").length})
             </Button>
           </div>
         </div>
@@ -164,8 +164,16 @@ export default function LocationsPage() {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-8">
-            {filteredLocations.map((location) => (
-              <Card key={location.id} className="overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            {filteredLocations.map((location, index) => (
+              <Card 
+                key={location.id} 
+                className={`overflow-hidden hover:shadow-xl transition-all duration-500 ${
+                  activeFilter !== "all" ? "animate-fade-in" : ""
+                }`}
+                style={{
+                  animationDelay: `${index * 100}ms`
+                }}
+              >
                 <div className="relative">
                   <div className="cursor-pointer" onClick={() => openInMaps(location.coordinates)}>
                     <iframe
@@ -180,9 +188,9 @@ export default function LocationsPage() {
                     />
                   </div>
                   <Badge
-                    className={`absolute top-4 left-4 ${location.type === "cement" ? "bg-blue-600" : "bg-gray-600"}`}
+                    className={`absolute top-4 left-4 ${location.type === "cement" ? "bg-blue-600" : "bg-green-600"}`}
                   >
-                    {location.type === "cement" ? "Cement Operating Office" : "Plastic Operating Office"}
+                    {location.type === "cement" ? "Cement Distribution Center" : "Plastic Division Office"}
                   </Badge>
                 </div>
 
@@ -318,11 +326,11 @@ export default function LocationsPage() {
 
             <Card className="text-center">
               <CardHeader>
-                <CardTitle className="text-blue-600">Plastic Products Hub</CardTitle>
+                <CardTitle className="text-green-600">Plastic Products Division</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">Nationwide plastic distribution</p>
-                <p className="text-sm text-gray-500 mt-2">From Kwara operating offices</p>
+                <p className="text-sm text-gray-500 mt-2">Headquartered in Olunlade, Kwara State</p>
               </CardContent>
             </Card>
           </div>
