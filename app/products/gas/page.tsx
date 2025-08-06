@@ -15,10 +15,10 @@ export default function GasServicesPage() {
       image: "/gas banner.jpg",
     },
     {
-      title: "Gas Plant Installation",
-      description: "Professional gas plant setup and installation services with technical expertise",
+      title: "Gas Plant Operations",
+      description: "Professional gas plant operations and services with technical expertise",
       icon: Settings,
-      features: ["Expert installation", "Safety compliance", "Equipment supply", "Technical support"],
+      features: ["Plant operations", "Safety compliance", "Equipment supply", "Technical support"],
       image: "/gas plant installation.jpg",
     },
     {
@@ -35,8 +35,8 @@ export default function GasServicesPage() {
     address: "Baale Olomi opposite Ola Jesu block industry, Agbede, Ikorodu, Lagos State",
     phone: "09035898910",
     hours: "Mon-Sat: 8:00 AM - 6:00 PM",
-    services: ["LPG Distribution", "Gas Plant Installation", "Equipment Supply", "Distributor/End User Services"],
-    description: "Professional LPG distribution and gas plant installation services",
+    services: ["LPG Distribution", "Gas Plant Operations", "Equipment Supply", "Distributor/End User Services"],
+    description: "Professional LPG distribution and gas plant operations services",
   }
 
   return (
@@ -58,7 +58,7 @@ export default function GasServicesPage() {
             </div>
             <h1 className="text-5xl lg:text-6xl font-bold mb-6">Gas Plant Services</h1>
             <p className="text-xl text-orange-100 max-w-3xl mx-auto mb-8">
-              Professional LPG distribution and gas plant installation services for domestic and commercial use across Lagos and surrounding areas.
+              Professional LPG distribution and gas plant operations services for domestic and commercial use across Lagos and surrounding areas.
             </p>
             <Button asChild size="lg" className="bg-white text-orange-900 hover:bg-orange-50">
               <Link href="/contact">Get Gas Services Quote</Link>
@@ -73,7 +73,7 @@ export default function GasServicesPage() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Gas Services</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive gas plant solutions from LPG distribution to complete installation services
+              Comprehensive gas plant solutions from LPG distribution to complete operations services
             </p>
           </div>
 
@@ -121,7 +121,7 @@ export default function GasServicesPage() {
               <Badge className="bg-orange-600 mb-4">NOW SELLING</Badge>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">Global 5050 Group Gas Plant</h2>
               <p className="text-xl text-gray-600 mb-6">
-                Professional gas plant services including LPG distribution and installation. We serve both distributors and end users with quality equipment and reliable service.
+                Professional gas plant services including LPG distribution and operations. We serve both distributors and end users with quality equipment and reliable service.
               </p>
               <div className="space-y-4 mb-8">
                 <div className="flex items-center gap-3">
@@ -130,7 +130,7 @@ export default function GasServicesPage() {
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-green-600" />
-                  <span>Professional installation services</span>
+                  <span>Professional gas plant operations</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-green-600" />
@@ -252,7 +252,7 @@ export default function GasServicesPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">Need Gas Plant Services?</h2>
           <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto">
-            Contact us today for reliable LPG distribution, professional gas plant installation, and quality equipment supply.
+            Contact us today for reliable LPG distribution, professional gas plant operations, and quality equipment supply.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-white text-orange-900 hover:bg-orange-50">
