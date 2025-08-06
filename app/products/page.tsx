@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Building2, Package, Settings, Truck, ArrowRight } from "lucide-react"
+import { Building2, Package, Settings, Truck, ArrowRight, Fuel } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -14,6 +14,14 @@ export default function ProductsPage() {
         "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dangote%20global.jpg-GD4UJjdfdU4eRVS2c8VEqOgNNp4xdI.jpeg",
       href: "/products/cement",
       features: ["Lafarge Africa Plc", "Dangote Cement PLC", "BUA Cement", "Mangal Cement"],
+    },
+    {
+      title: "Gas Plant Services",
+      description: "LPG distribution and gas plant installation services",
+      icon: Fuel,
+      image: "/gas banner.jpg",
+      href: "/products/gas",
+      features: ["LPG Distribution", "Gas Plant Installation", "Equipment Supply", "Distributor/End User Services"],
     },
     {
       title: "Plastic Products",
@@ -52,7 +60,7 @@ export default function ProductsPage() {
           <div className="text-center">
             <h1 className="text-5xl lg:text-6xl font-bold mb-6">Products & Services</h1>
             <p className="text-xl text-gray-200 max-w-3xl mx-auto mb-8">
-              Comprehensive construction solutions from premium cement distribution to complete building services across
+              Comprehensive construction solutions from premium cement distribution, gas plant services, to complete building services across
               Nigeria.
             </p>
           </div>
@@ -65,7 +73,7 @@ export default function ProductsPage() {
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Our Product Categories</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From premium cement brands to complete construction services - everything you need for your building
+              From premium cement brands and gas plant services to complete construction solutions - everything you need for your building
               projects
             </p>
           </div>
@@ -197,7 +205,7 @@ export default function ProductsPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">Need Construction Solutions?</h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            From premium cement to complete construction services, we provide everything you need for successful
+            From premium cement and gas plant services to complete construction solutions, we provide everything you need for successful
             building projects across Nigeria.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

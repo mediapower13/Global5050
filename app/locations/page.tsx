@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -10,6 +10,14 @@ import { useToast } from "@/hooks/use-toast"
 export default function LocationsPage() {
   const [activeFilter, setActiveFilter] = useState("all")
   const { toast } = useToast()
+
+  // Handle URL hash navigation (e.g., /locations#gas)
+  useEffect(() => {
+    const hash = window.location.hash.replace('#', '')
+    if (hash && ['cement', 'plastic', 'gas'].includes(hash)) {
+      setActiveFilter(hash)
+    }
+  }, [])
 
   const locations = [
     {
@@ -90,12 +98,26 @@ export default function LocationsPage() {
       mapUrl:
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.123456789!2d4.5521!3d8.4899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwMjknMjMuNiJOIDTCsDMzJzA3LjYiRQ!5e0!3m2!1sen!2sng!4v1234567890123!5m2!1sen!2sng",
     },
+    {
+      id: 7,
+      name: "Gas Plant Station",
+      type: "gas",
+      address: "Baale Olomi opposite Ola Jesu block industry, Agbede, Ikorodu, Lagos State",
+      coordinates: { lat: 6.6134, lng: 3.5021 },
+      phone: "09035898910",
+      hours: "Mon-Sat: 8:00 AM - 6:00 PM",
+      services: ["LPG Distribution", "Gas Plant Installation", "Equipment Supply", "Distributor/End User Services"],
+      description: "Professional LPG distribution and gas plant installation services",
+      mapUrl:
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.123456789!2d3.5021!3d6.6134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMzYnNDguMiJOIDPCsDMwJzA3LjYiRQ!5e0!3m2!1sen!2sng!4v1234567890123!5m2!1sen!2sng",
+    },
   ]
 
   const filteredLocations = locations.filter((location) => {
     if (activeFilter === "all") return true
     if (activeFilter === "cement") return location.type === "cement"
     if (activeFilter === "plastic") return location.type === "plastic"
+    if (activeFilter === "gas") return location.type === "gas"
     return true
   })
 
@@ -125,7 +147,7 @@ export default function LocationsPage() {
           <div className="text-center">
             <h1 className="text-5xl lg:text-6xl font-bold mb-6">Our Locations</h1>
             <p className="text-xl text-gray-200 max-w-3xl mx-auto mb-8">
-              Strategic locations across Nigeria for easy access to our products and services
+              Strategic locations across Nigeria for easy access to our cement, gas plant services, plastic products and construction solutions
             </p>
           </div>
         </div>
@@ -134,7 +156,7 @@ export default function LocationsPage() {
       {/* Filter Navigation */}
       <section className="py-8 bg-white border-b border-gray-200 sticky top-20 z-40">
         <div className="container mx-auto px-4">
-          <div className="flex justify-center gap-4">
+          <div className="flex justify-center gap-4 flex-wrap">
             <Button
               onClick={() => setActiveFilter("all")}
               variant={activeFilter === "all" ? "default" : "outline"}
@@ -155,6 +177,13 @@ export default function LocationsPage() {
               className={activeFilter === "plastic" ? "bg-green-600 hover:bg-green-700" : ""}
             >
               Plastic Division ({locations.filter((l) => l.type === "plastic").length})
+            </Button>
+            <Button
+              onClick={() => setActiveFilter("gas")}
+              variant={activeFilter === "gas" ? "default" : "outline"}
+              className={activeFilter === "gas" ? "bg-orange-600 hover:bg-orange-700" : ""}
+            >
+              Gas Services ({locations.filter((l) => l.type === "gas").length})
             </Button>
           </div>
         </div>
@@ -188,9 +217,19 @@ export default function LocationsPage() {
                     />
                   </div>
                   <Badge
-                    className={`absolute top-4 left-4 ${location.type === "cement" ? "bg-blue-600" : "bg-green-600"}`}
+                    className={`absolute top-4 left-4 ${
+                      location.type === "cement" 
+                        ? "bg-blue-600" 
+                        : location.type === "gas" 
+                        ? "bg-orange-600" 
+                        : "bg-green-600"
+                    }`}
                   >
-                    {location.type === "cement" ? "Cement Distribution Center" : "Plastic Division Office"}
+                    {location.type === "cement" 
+                      ? "Cement Distribution Center" 
+                      : location.type === "gas" 
+                      ? "Gas Plant Services" 
+                      : "Plastic Division Office"}
                   </Badge>
                 </div>
 
@@ -273,7 +312,7 @@ export default function LocationsPage() {
             <p className="text-xl text-gray-600">Serving customers across Nigeria with strategic locations</p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Card className="text-center">
               <CardHeader>
                 <CardTitle className="text-blue-600">Southwest Nigeria</CardTitle>
@@ -331,6 +370,16 @@ export default function LocationsPage() {
               <CardContent>
                 <p className="text-gray-600">Nationwide plastic distribution</p>
                 <p className="text-sm text-gray-500 mt-2">Headquartered in Olunlade, Kwara State</p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center">
+              <CardHeader>
+                <CardTitle className="text-orange-600">Gas Plant Services</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">Lagos and surrounding areas</p>
+                <p className="text-sm text-gray-500 mt-2">Served from Agbede Gas Plant Station</p>
               </CardContent>
             </Card>
           </div>

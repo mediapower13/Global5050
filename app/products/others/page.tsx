@@ -1,12 +1,37 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Package, Truck, MapPin, CheckCircle, ArrowRight } from "lucide-react"
+import { Package, Truck, MapPin, CheckCircle, ArrowRight, Fuel } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
 export default function OtherProductsPage() {
   const productCategories = [
+    {
+      title: "Gas Plant Services",
+      description: "LPG distribution and gas plant installation services",
+      icon: Fuel,
+      products: [
+        {
+          name: "LPG Distribution",
+          description: "Quality LPG supply for domestic and commercial use",
+          features: ["Reliable supply", "Quality assurance", "Competitive pricing", "Safe handling"],
+          image: "/gas banner.jpg",
+        },
+        {
+          name: "Gas Plant Installation",
+          description: "Professional gas plant setup and installation services",
+          features: ["Expert installation", "Safety compliance", "Equipment supply", "Technical support"],
+          image: "/gas plant installation.jpg",
+        },
+        {
+          name: "Gas Equipment Supply",
+          description: "Complete range of gas cylinders and equipment",
+          features: ["Various cylinder sizes", "Safety equipment", "Distributor services", "End user support"],
+          image: "/gas supplies.jpeg",
+        },
+      ],
+    },
     {
       title: "Sand & Aggregates",
       description: "Quality aggregates essential for construction projects",
@@ -95,6 +120,12 @@ export default function OtherProductsPage() {
 
 const locations = [
   {
+    name: "Gas Plant Station",
+    address: "Baale Olomi opposite Ola Jesu block industry, Agbede, Ikorodu, Lagos State",
+    speciality: "LPG Distribution & Gas Plant Services",
+    contact: "09035898910",
+  },
+  {
     name: "Kwara Operating Office - Olunlade",
     address: "Opposite Latara, Olunlade, Ilorin",
     speciality: "Plastic Products Wholesale",
@@ -120,7 +151,7 @@ return (
           <div className="text-center animate-fade-in-up">
             <h1 className="text-5xl lg:text-6xl font-bold mb-6">Other Products</h1>
             <p className="text-xl text-gray-200 max-w-3xl mx-auto mb-8">
-              Complete range of construction materials, sand & aggregates, and plastic products to support all your
+              Complete range of gas plant services, construction materials, sand & aggregates, and plastic products to support all your
               building and industrial needs.
             </p>
             <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
@@ -189,7 +220,7 @@ return (
             <p className="text-xl text-gray-600">Strategic locations for easy access to our products</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {locations.map((location, index) => (
               <Card key={index} className="text-center hover-lift">
                 <CardHeader>
@@ -203,7 +234,9 @@ return (
                   <Badge variant="secondary" className="mb-4">
                     {location.speciality}
                   </Badge>
-                  <p className="text-sm text-gray-600 mb-4">Contact: 08036007621, 08054186884</p>
+                  <p className="text-sm text-gray-600 mb-4">
+                    Contact: {location.contact || "08036007621, 08054186884"}
+                  </p>
                   <Button asChild variant="outline" size="sm">
                     <Link href="/locations">View Details</Link>
                   </Button>

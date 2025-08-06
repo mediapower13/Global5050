@@ -41,6 +41,7 @@ export default function Header() {
       href: "/products",
       dropdown: [
         { name: "Premium Cement", href: "/products/cement" },
+        { name: "Gas Plant Services", href: "/products/gas" },
         { name: "Plastic Products", href: "/products/plastic" },
         { name: "Sand & Aggregates", href: "/products/sand" },
         { name: "Construction Services", href: "/products/services" },
@@ -62,6 +63,7 @@ export default function Header() {
         { name: "All Locations", href: "/locations" },
         { name: "Cement Centers", href: "/locations#cement" },
         { name: "Plastic Operating Offices", href: "/locations#plastic" },
+        { name: "Gas Plant Station", href: "/locations#gas" },
       ],
     },
   ]
