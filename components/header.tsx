@@ -41,10 +41,10 @@ export default function Header() {
       href: "/products",
       dropdown: [
         { name: "Premium Cement", href: "/products/cement" },
-        { name: "Gas Plant Services", href: "/products/gas" },
         { name: "Plastic Products", href: "/products/plastic" },
         { name: "Sand & Aggregates", href: "/products/sand" },
         { name: "Construction Services", href: "/products/services" },
+        { name: "Gas Plant Services", href: "/products/gas" },
       ],
     },
     {

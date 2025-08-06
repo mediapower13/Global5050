@@ -65,6 +65,7 @@ export default function Footer() {
     { name: "Plastic Products", href: "/products/plastic" },
     { name: "Sand & Aggregates", href: "/products/sand" },
     { name: "Construction Services", href: "/products/services" },
+    { name: "Gas Services", href: "/products/gas" },
   ]
 
   const locations = [
