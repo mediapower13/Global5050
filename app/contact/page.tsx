@@ -62,7 +62,7 @@ export default function ContactPage() {
       name: "Lagos Head Office",
       type: "Primary",
       address: "1B Maboreje Street, Agbede, Agric, Ikorodu, Lagos State",
-      phone: "08036007621",
+      phone: " 0803 574 1810",
       email: "info@global5050concepts.com",
       hours: "Monday - Saturday: 8:00 AM - 6:00 PM"
     },
@@ -212,7 +212,7 @@ export default function ContactPage() {
                   <Phone className="h-5 w-5 text-blue-600" />
                   <div>
                     <p className="font-medium">Call Us Now</p>
-                    <p className="text-blue-600">08036007621 | 0906 736 1349</p>
+                    <p className="text-blue-600"> 0803 574 1810 | 0906 736 1349</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">

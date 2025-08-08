@@ -241,7 +241,7 @@ export default function AboutPage() {
                       solutions.
                     </p>
                     <p>
-                      Today, we operate from our headquarters in Owerri and strategic locations across Nigeria, serving
+                      Today, we operate from our headquarters in Lagos and strategic locations across Nigeria, serving
                       customers with quality cement from leading manufacturers like Lafarge, Dangote, BUA, and Mangal.
                       Our success is built on the foundation of mutual trust, respect, and unwavering commitment to
                       quality.

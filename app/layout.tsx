@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description:
     "Official distributor for Nigeria's leading cement manufacturers. Quality construction solutions, cement distribution, and building services since 2012.",
   keywords: "cement, construction, Nigeria, Lafarge, Dangote, BUA, Mangal, building materials, plastic products",
-    generator: 'v0.dev'
+    generator: ''
 }
 
 export default function RootLayout({
