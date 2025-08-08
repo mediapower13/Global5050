@@ -26,7 +26,7 @@ export default function LocationsPage() {
       type: "cement",
       address: "1B Maboreje Street, Agbede, Agric, Ikorodu, Lagos State",
       coordinates: { lat: 6.5244, lng: 3.3792 },
-      phone: "08036007621",
+      phone: "08035741810",
       hours: "Mon-Sat: 8:00 AM - 6:00 PM",
       services: ["Main Operations", "Strategic Planning", "Corporate Management"],
       description: "Our main headquarters and primary business operations center",
