@@ -107,7 +107,7 @@ export default function HomePage() {
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 md:p-6 max-w-sm md:max-w-md">
               <div className="flex items-center gap-3 mb-2">
                 <Phone className="h-4 w-4 md:h-5 md:w-5 text-blue-300" />
-                <span className="font-bold text-lg md:text-xl">0906 736 1349</span>
+                <span className="font-bold text-lg md:text-xl"> 0803 574 1810</span>
               </div>
               <div className="flex items-center gap-3">
                 <MapPin className="h-4 w-4 md:h-5 md:w-5 text-blue-300" />
