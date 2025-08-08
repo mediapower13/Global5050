@@ -72,7 +72,7 @@ export default function Footer() {
     {
       name: "Lagos Head Office",
       address: "1B Maboreje Street, Agbede, Agric, Ikorodu",
-      phone: "08036007621",
+      phone: " 0803 574 1810",
     },
     {
       name: "Owerri Operating Office",
@@ -82,7 +82,7 @@ export default function Footer() {
     {
       name: "Kwara Operating Office",
       address: "Olunlade, Ilorin",
-      phone: "08054186884",
+      phone: "0805 418 6884",
     },
   ]
 
